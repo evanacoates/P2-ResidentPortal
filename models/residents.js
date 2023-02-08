@@ -35,4 +35,4 @@ Residents.init(
   }
 );
 
-module.exports = Gallery;
+module.exports = Residents;
