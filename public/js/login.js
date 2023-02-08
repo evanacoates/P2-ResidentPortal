@@ -1,13 +1,13 @@
 const loginFormHandler = async (event) => {
-    // TODO: Add a comment describing the functionality of this statement
+    
     event.preventDefault();
   
-    // TODO: Add a comment describing the functionality of these expressions
+    
     const email = document.querySelector('#username-input').value.trim();
     const password = document.querySelector('#password-input').value.trim();
   
     if (email && password) {
-      // TODO: Add a comment describing the functionality of this expression
+      
       const response = await fetch('/api/users/login', {
         method: 'POST',
         body: JSON.stringify({ email, password }),
@@ -20,9 +20,10 @@ const loginFormHandler = async (event) => {
         alert('Failed to log in');
       }
     }
-  };
+};
   
   document
     .querySelector('.login-form')
     .addEventListener('submit', loginFormHandler);
   
+
