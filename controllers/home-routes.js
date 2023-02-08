@@ -2,7 +2,9 @@ const router = require('express').Router();
 
 router.get('/', async (req, res) => {
     
-    res.render('main');
+    res.render('homepage', {layout : false});
+    
+    
     /* if (req.session.loggedIn) {
         res.redirect('/homepage');
         return;
@@ -13,21 +15,16 @@ router.get('/', async (req, res) => {
 
 })
 
-//router.get('/homepage', async (req, res) => {
-    /* if(req.session.loggedIn)
-    res.render('homepage');
-    else{
-        res.redirect('login')
-        return;
-     *///}
-        
-//});
+router.get('/user', async (req, res) => {
+   
+    res.render('user', {layout : false});
+});
 
 
 
 router.get('/login', (req, res) => {
     
-    res.render('login');
+    res.render('login', {layout : false});
 });
 
 module.exports = router; 
