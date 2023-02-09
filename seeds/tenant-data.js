@@ -1,0 +1,21 @@
+const sequelize = require('../config/connection');
+
+const Accounts = require('../modules/accounts');
+const Leases = require('../models/leases');
+const Residents = require('../models/residents');
+
+const AccountSeedData = require('./accountSeedData.json');
+const LeasesSeedData = require('./leasesSeedData.json');
+const ResidentsSeedData = require('./residentsSeedData.json');
+
+const seedDatabase = async () => {
+    await sequelize.sync({ force: true });
+   
+    await Accounts.bulkCreate(AccountSeedData);
+    await Leases.bulkCreate(LeasesSeedData);
+    await Residents.bulkCreate(ResidentsSeedData);
+
+    process.exit(0);
+}
+
+seedDatabase();
