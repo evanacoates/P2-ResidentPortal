@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 
 })
 
-router.get('/user', async (req, res) => {
+router.get('/user/id:', async (req, res) => {
    
     res.render('user', {layout : false});
 });

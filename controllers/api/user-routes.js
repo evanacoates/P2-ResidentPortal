@@ -1,19 +1,18 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { Residents } = require('../../models');
 
-// CREATE new user
+// CREATE new Residents
 router.post('/login', async (req, res) => {
   try {
-    const dbUserData = await User.create({
-      username: req.body.username,
-      email: req.body.email,
+    const dbResidentsData = await Residents.create({
+      Residentsname: req.body.Residentsname,
       password: req.body.password,
     });
 
     req.session.save(() => {
       req.session.loggedIn = true;
 
-      res.status(200).json(dbUserData);
+      res.status(200).json(dbResidentsData);
     });
   } catch (err) {
     console.log(err);
@@ -24,20 +23,20 @@ router.post('/login', async (req, res) => {
 // Login
 router.post('/login', async (req, res) => {
   try {
-    const dbUserData = await User.findOne({
+    const dbResidentsData = await Residents.findOne({
       where: {
         email: req.body.email,
       },
     });
 
-    if (!dbUserData) {
+    if (!dbResidentsData) {
       res
         .status(400)
         .json({ message: 'Incorrect email or password. Please try again!' });
       return;
     }
 
-    const validPassword = await dbUserData.checkPassword(req.body.password);
+    const validPassword = await dbResidentsData.checkPassword(req.body.password);
 
     if (!validPassword) {
       res
@@ -51,7 +50,7 @@ router.post('/login', async (req, res) => {
 
       res
         .status(200)
-        .json({ user: dbUserData, message: 'You are now logged in!' });
+        .json({ Residents: dbResidentsData, message: 'You are now logged in!' });
     });
   } catch (err) {
     console.log(err);

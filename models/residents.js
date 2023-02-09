@@ -12,18 +12,18 @@ Residents.init(
       //autoIncrement: true,
     },
     name: {
-      type: DataTypes.VARCHAR,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     address: {
-      type: DataTypes.VARCHAR,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     phoneNumber: {
       type: DataTypes.INTEGER,
     },
     email: {
-      type: DataTypes.VARCHAR,
+      type: DataTypes.STRING,
       allowNull: false,
     },
   },
