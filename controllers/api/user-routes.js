@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+//const { Residents } = require('../../models');
 
-// CREATE new user
+//CREATE new user
 router.post('/login', async (req, res) => {
   try {
     const dbUserData = await User.create({
@@ -20,7 +20,7 @@ router.post('/login', async (req, res) => {
     res.status(500).json(err);
   }
 });
-
+ 
 // Login
 router.post('/login', async (req, res) => {
   try {
