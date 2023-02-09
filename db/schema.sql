@@ -4,25 +4,28 @@ CREATE DATABASE tenants_db;
 
 USE tenants_db;
 
-CREATE TABLE leasingInfo {
+CREATE TABLE leasingInfo (
     unitNumber INT PRIMARY KEY,
     leaseHolder VARCHAR(255) NOT NULL,
     leasingTerm VARCHAR(30) NOT NULL,
     rentCost INT
-};
+);
 
-CREATE TABLE personalInfo {
-    unitNumber INT FOREIGN KEY,
+CREATE TABLE personalInfo (
+    unitNumber INT,
     name VARCHAR(30) NOT NULL,
     address VARCHAR(50) NOT NULL,
     phoneNumber INT,
     email VARCHAR(30) NOT NULL,
-};
+    FOREIGN KEY (unitNumber) REFERENCES leasingInfo(unitNumber)
+);
 
-CREATE TABLE accountInfo {
-    unitNumber INT FOREIGN KEY,
+CREATE TABLE accountInfo (
+    unitNumber INT,
     name VARCHAR(30) NOT NULL,
     userName VARCHAR(30) NOT NULL,
     Password VARCHAR(30) NOT NULL,
     billingIn INT,
-};
+    FOREIGN KEY (unitNumber) REFERENCES leasingInfo(unitNumber)
+);
+
