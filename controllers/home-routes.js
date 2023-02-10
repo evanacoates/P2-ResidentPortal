@@ -26,7 +26,6 @@ router.get('/user', async (req, res) => {
 router.get('/register', (req, res) => {
     
     res.render('register', {
-    layout : false,
     logged_in : req.session.logged_in});
 });
 
@@ -34,7 +33,6 @@ router.get('/register', (req, res) => {
 router.get('/homepage', (req, res) => {
     
     res.render('homepage', {
-    layout : false,
     logged_in : req.session.logged_in});
 });
 
