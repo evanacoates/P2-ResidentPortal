@@ -1,0 +1,26 @@
+[
+    {
+        "unitNumber": 102,
+        "leaseHolder": "Wayne David",
+        "leasingTerm": 6,
+        "rentCost": 1500.00
+    },
+    {
+        "unitNumber": 212,
+        "leaseHolder": "Veronica Green",
+        "leasingTerm": 6,
+        "rentCost": 1500.00
+    },
+    {
+        "unitNumber": 301,
+        "leaseHolder": "Kendrick Gilmore",
+        "leasingTerm": 1,
+        "rentCost": 2000.00
+    },
+    {
+        "unitNumber": 214,
+        "leaseHolder": "Jolene Henderson",
+        "leasingTerm": 1,
+        "rentCost": 2000.00
+    }
+]

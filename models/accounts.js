@@ -23,7 +23,7 @@ Accounts.init(
         allowNull: false,
     },
     billingIn: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.DECIMAL,
         allowNull: false,
     },
   },

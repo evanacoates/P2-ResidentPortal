@@ -1,0 +1,30 @@
+[
+    {
+        "unitNumber": 102,
+        "name": "Wayne David",
+        "userName": "WayneDavid17",
+        "passwords": "puppies123",
+        "billingIn": 1500.00
+    },
+    {
+        "unitNumber": 212,
+        "name": "Veronica Green",
+        "userName": "RoniGreen",
+        "passwords": "Dannydevito",
+        "billingIn": 1700.00 
+    },
+    {
+        "unitNumber": 301,
+        "name": "Kendrick Gilmore",
+        "userName": "KenGilmore",
+        "passwords": "blueskies",
+        "billingIn": 2100.00
+    },
+    {
+        "unitNumber": 214,
+        "name": "Jolene Henderson",
+        "userName": "JoleneHenderson7",
+        "passwords": "password123",
+        "billingIn": 2000.00
+    }
+]
