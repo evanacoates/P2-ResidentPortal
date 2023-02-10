@@ -23,10 +23,19 @@ router.get('/user', async (req, res) => {
 });
 
 
+router.get('/register', (req, res) => {
+    
+    res.render('register', {
+    layout : false,
+    logged_in : req.session.logged_in});
+});
+
 
 router.get('/homepage', (req, res) => {
     
-    res.render('login', {layout : false});
+    res.render('homepage', {
+    layout : false,
+    logged_in : req.session.logged_in});
 });
 
 module.exports = router; 
