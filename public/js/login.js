@@ -1,16 +1,18 @@
-const loginFormHandler = async (event) => {
+console.log('using login.js')
+
+async function lFHandler(event) {
     
     event.preventDefault();
   
     
-    const email = document.querySelector('#username-input').value.trim();
-    const password = document.querySelector('#password-input').value.trim();
+    const username = document.getElementById('username-input').value.trim();
+    const password = document.getElementById('password-input').value.trim();
   
-    if (email && password) {
+    if (username && password) {
       
       const response = await fetch('/api/users/login', {
         method: 'POST',
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ username, password }),
         headers: { 'Content-Type': 'application/json' },
       });
   
@@ -23,7 +25,7 @@ const loginFormHandler = async (event) => {
 };
   
   document
-    .querySelector('.login-form')
-    .addEventListener('submit', loginFormHandler);
+    .getElementById('enter')
+    .addEventListener('click', lFHandler);
   
 

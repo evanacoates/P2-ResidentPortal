@@ -18,7 +18,7 @@ Leases.init(
       type: DataTypes.DATE,
       allowNull: false,
     },
-    rentCost: {
+    rent_cost: {
         type: DataTypes.DECIMAL,
         allowNull: false,
     },

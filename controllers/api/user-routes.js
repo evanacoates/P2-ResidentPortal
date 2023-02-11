@@ -1,10 +1,10 @@
 const router = require('express').Router();
-//const { Residents } = require('../../models');
+const { Accounts } = require('../../models');
 
 //CREATE new user
-router.post('/login', async (req, res) => {
+/* router.post('/login', async (req, res) => {
   try {
-    const dbUserData = await User.create({
+    const dbUserData = await Residents.create({
       username: req.body.username,
       email: req.body.email,
       password: req.body.password,
@@ -20,29 +20,33 @@ router.post('/login', async (req, res) => {
     res.status(500).json(err);
   }
 });
- 
+ */ 
 // Login
 router.post('/login', async (req, res) => {
   try {
-    const dbUserData = await User.findOne({
+    const dbUserData = await Accounts.findOne({
       where: {
-        email: req.body.email,
+        user_name: req.body.username,
       },
     });
+    
 
     if (!dbUserData) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
+        .json({ message: 'No Email Found' });
       return;
     }
 
     const validPassword = await dbUserData.checkPassword(req.body.password);
+   console.log(dbUserData.password)
+   
 
-    if (!validPassword) {
+    if (req.body.password !== dbUserData.password) {
       res
         .status(400)
-        .json({ message: 'Incorrect email or password. Please try again!' });
+        .json({ message: 'Incorrect  password. Please try again!' });
+        console.log('incorrect password')
       return;
     }
 
@@ -52,6 +56,9 @@ router.post('/login', async (req, res) => {
       res
         .status(200)
         .json({ user: dbUserData, message: 'You are now logged in!' });
+        console.log('logged in')
+        res.redirect('/user')
+        
     });
   } catch (err) {
     console.log(err);

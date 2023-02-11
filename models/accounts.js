@@ -1,11 +1,19 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const bcrypt = require('bcrypt');
 
-class Accounts extends Model {}
+class Accounts extends Model {
+  checkPassword(password) {
+    console.log(this.password)
+    console.log(password)
+    return bcrypt.compareSync(password, this.password);
+    
+  }
+}
 
 Accounts.init(
   {
-    unitNumber: {
+    unit_number: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
@@ -14,7 +22,7 @@ Accounts.init(
         type: DataTypes.STRING,
         allowNull: false,
       },
-    userName: {
+    user_name: {
         type: DataTypes.STRING,
         allowNull: false,
     },
@@ -22,7 +30,7 @@ Accounts.init(
         type: DataTypes.STRING,
         allowNull: false,
     },
-    billingIn: {
+    billing_in: {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
@@ -33,6 +41,19 @@ Accounts.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'accounts',
+  },
+  {
+    hooks: {
+      beforeCreate: async (newUserData) => {
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      },
+    },
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'user',
   }
 );
 
