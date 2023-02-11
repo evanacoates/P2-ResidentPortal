@@ -6,7 +6,7 @@ class Residents extends Model { }
 
 Residents.init(
   {
-    unitNumber: {
+    unit_number: {
       type: DataTypes.INTEGER,
       allowNull: true,
       foreignKey: true,
@@ -24,7 +24,7 @@ Residents.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-    phoneNumber: {
+    phone_number: {
       type: DataTypes.STRING,
     },
     email: {

@@ -5,7 +5,7 @@ class Accounts extends Model {}
 
 Accounts.init(
   {
-    unitNumber: {
+    unit_number: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
@@ -14,7 +14,7 @@ Accounts.init(
         type: DataTypes.STRING,
         allowNull: false,
       },
-    userName: {
+    user_name: {
         type: DataTypes.STRING,
         allowNull: false,
     },
@@ -22,7 +22,7 @@ Accounts.init(
         type: DataTypes.STRING,
         allowNull: false,
     },
-    billingIn: {
+    billing_in: {
         type: DataTypes.DECIMAL,
         allowNull: false,
     },

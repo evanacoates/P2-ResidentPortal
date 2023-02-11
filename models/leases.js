@@ -5,20 +5,20 @@ class Leases extends Model {}
 
 Leases.init(
   {
-    unitNumber: {
+    unit_number: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
     },
-    leaseHolder: {
+    lease_holder: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    leasingTerm: {
+    leasing_term: {
       type: DataTypes.DATE,
       allowNull: false,
     },
-    rentCost: {
+    rent_cost: {
         type: DataTypes.DECIMAL,
         allowNull: false,
     },
