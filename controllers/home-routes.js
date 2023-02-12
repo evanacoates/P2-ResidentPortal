@@ -39,9 +39,10 @@ router.get('/register', (req, res) => {
 
 
 router.get('/homepage', (req, res) => {
-    
+    console.log(req.session.loggedIn)
     res.render('homepage', {
     logged_in : req.session.logged_in});
+    
 });
 
 router.get('/account', async (req, res) => {
