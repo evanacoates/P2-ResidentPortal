@@ -1,8 +1,9 @@
 console.log('using login.js')
 
 async function lFHandler(event) {
-    
+    console.log('before prevent default')
     event.preventDefault();
+    
   
     
     const username = document.getElementById('username-input').value.trim();
@@ -16,12 +17,14 @@ async function lFHandler(event) {
         headers: { 'Content-Type': 'application/json' },
       });
   
-      if (response.ok) {
+       if (response.ok) {
         document.location.replace('/');
+        console.log('enetered user && password')
       } else {
         alert('Failed to log in');
       }
-    }
+    
+  }
 };
   
   document
