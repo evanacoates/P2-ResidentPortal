@@ -2,12 +2,15 @@ const router = require('express').Router();
 const { Accounts } = require('../../models');
 
 //CREATE new user
-/* router.post('/login', async (req, res) => {
+ router.post('/register', async (req, res) => {
   try {
-    const dbUserData = await Residents.create({
-      username: req.body.username,
-      email: req.body.email,
+    const dbUserData = await Accounts.create({
+      user_name: req.body.username,
       password: req.body.password,
+      email: req.body.email,
+      unit_number: req.body.unitNumber,
+      name: req.body.name,
+      id: Math.random() * (9999 - 1111) + 1111,
     });
 
     req.session.save(() => {
@@ -20,7 +23,7 @@ const { Accounts } = require('../../models');
     res.status(500).json(err);
   }
 });
- */ 
+
 // Login
 router.post('/login', async (req, res) => {
   try {
@@ -41,11 +44,11 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    //const validPassword = await dbUserData.checkPassword(req.body.password);
+    const validPassword = await dbUserData.checkPassword(req.body.password);
    //console.log(dbUserData.password)
    
 
-    if (req.body.password !== dbUserData.password) {
+    if (!validPassword) {
       res
         .status(400)
         .json({ message: 'Incorrect  password. Please try again!' });

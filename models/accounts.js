@@ -14,14 +14,18 @@ class Accounts extends Model {
 Accounts.init(
   {
   
-    unit_number: {
+    id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
     },
+    unit_number: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+  },
     name: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
     user_name: {
         type: DataTypes.STRING,
@@ -33,7 +37,7 @@ Accounts.init(
     },
     billing_in: {
         type: DataTypes.DECIMAL,
-        allowNull: false,
+        allowNull: true,
     },
   },
 
