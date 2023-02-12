@@ -32,12 +32,12 @@ router.get('/register', (req, res) => {
 
 router.get('/homepage', (req, res) => {
     
-<<<<<<< HEAD
+
     res.render('loggedIn', {layout : false});
-=======
+
     res.render('homepage', {
     logged_in : req.session.logged_in});
->>>>>>> b77525cb5ea67c3bc78e31beef114e4a97ab33f1
+
 });
 
 router.get('/account', async (req, res) => {
