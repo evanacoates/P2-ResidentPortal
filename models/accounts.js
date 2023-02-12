@@ -13,6 +13,7 @@ class Accounts extends Model {
 
 Accounts.init(
   {
+  
     unit_number: {
         type: DataTypes.INTEGER,
         allowNull: false,
@@ -23,6 +24,7 @@ Accounts.init(
         allowNull: false,
       },
     user_name: {
+    user_name: {
         type: DataTypes.STRING,
         allowNull: false,
     },
@@ -31,22 +33,11 @@ Accounts.init(
         allowNull: false,
     },
     billing_in: {
-
-        type: DataTypes.INTEGER,
-
         type: DataTypes.DECIMAL,
-
         allowNull: false,
     },
   },
-  {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'accounts',
-  },
-  {
+  
     hooks: {
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
@@ -58,7 +49,7 @@ Accounts.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'user',
-  }
+  },
 );
 
 module.exports = Accounts;

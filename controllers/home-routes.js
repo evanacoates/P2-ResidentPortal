@@ -20,8 +20,15 @@ router.get('/', async (req, res) => {
 router.get('/user', async (req, res) => {
    
     res.render('user');
+   
 });
 
+
+router.get('/register', (req, res) => {
+    
+    res.render('register', {
+    logged_in : req.session.logged_in});
+});
 
 router.get('/register', (req, res) => {
     
@@ -32,6 +39,19 @@ router.get('/register', (req, res) => {
 
 router.get('/homepage', (req, res) => {
     
+    res.render('homepage', {
+    logged_in : req.session.logged_in});
+});
+
+router.get('/account', async (req, res) => {
+   
+    res.render('account');
+});
+
+router.get('/lease', async (req, res) => {
+   
+    res.render('leases', {
+        logged_in : req.session.logged_in});
 
     res.render('loggedIn', {layout : false});
 
@@ -50,6 +70,5 @@ router.get('/lease', async (req, res) => {
     res.render('leases', {
         logged_in : req.session.logged_in});
 });
-
 
 module.exports = router; 
