@@ -10,7 +10,7 @@ const { Accounts } = require('../../models');
       email: req.body.email,
       unit_number: req.body.unitNumber,
       name: req.body.name,
-      id: Math.random()
+      id: Math.random() * (9999 - 1111) + 1111,
     });
 
     req.session.save(() => {
