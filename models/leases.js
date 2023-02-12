@@ -5,7 +5,7 @@ class Leases extends Model {}
 
 Leases.init(
   {
-    unit_number: {
+    id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,

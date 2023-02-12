@@ -6,10 +6,10 @@ class Residents extends Model { }
 
 Residents.init(
   {
-    unit_number: {
+    id: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      foreignKey: true,
+      allowNull: false,
+      primaryKey: true,
       //autoIncrement: true,
     },
     name: {
