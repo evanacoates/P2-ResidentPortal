@@ -31,7 +31,11 @@ Accounts.init(
         allowNull: false,
     },
     billing_in: {
+
         type: DataTypes.INTEGER,
+
+        type: DataTypes.DECIMAL,
+
         allowNull: false,
     },
   },

@@ -1,0 +1,43 @@
+[
+    {
+        "unit_number": 102,
+        "name": "Wayne David",
+        "address": "14 Cason Lane Apt. 102, Murfreesboror, TN 37130",
+        "phone_number": "9108982682",
+        "email": "WayneDavid@gmail.com",
+        "username": "WayneDavid",
+        "password": "password"
+
+    },
+    {
+        "unit_number": 212,
+        "name": "Veronica Green",
+        "address": "14 Cason Lane Apt.212, Murfreesboror, TN 37130",
+        "phone_number": "6157890934",
+        "email": "RoniGreen@gmail.com",
+        "username": "VeronicaGreen",
+        "password": "password"
+
+    },
+    {
+        "unit_number": 301,
+        "name": "Kendrick Gilmore",
+        "address": "14 Cason Lane Apt. 301, Murfreesboror, TN 37130",
+        "phone_number": "9319082378",
+        "email": "KenGilmore@aol.com",
+        "username": "KendrickGilmore",
+        "password": "password"
+
+    },
+    {
+        "unit_number": 214,
+        "name": "Jolene Henderson",
+        "address": "14 Cason Lane Apt. 214, Murfreesboror, TN 37130",
+        "phone_number": "6178946782",
+        "email": "JoleneHenderson@yahoo.com",
+        "username": "JoleneHenderson",
+        "password": "password"
+
+    }
+
+]

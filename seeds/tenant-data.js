@@ -1,8 +1,9 @@
 const sequelize = require('../config/connection');
 
-const Accounts = require('../modules/accounts');
+const Accounts = require('../models/accounts');
 const Leases = require('../models/leases');
 const Residents = require('../models/residents');
+
 
 const AccountSeedData = require('./accountSeedData.json');
 const LeasesSeedData = require('./leasesSeedData.json');
