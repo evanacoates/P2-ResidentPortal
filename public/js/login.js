@@ -1,29 +1,34 @@
-const loginFormHandler = async (event) => {
-    
+console.log('using login.js')
+
+async function lFHandler(event) {
+    console.log('before prevent default')
     event.preventDefault();
+    
   
     
-    const email = document.querySelector('#username-input').value.trim();
-    const password = document.querySelector('#password-input').value.trim();
+    const username = document.getElementById('username-input').value.trim();
+    const password = document.getElementById('password-input').value.trim();
   
-    if (email && password) {
+    if (username && password) {
       
       const response = await fetch('/api/users/login', {
         method: 'POST',
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ username, password }),
         headers: { 'Content-Type': 'application/json' },
       });
   
-      if (response.ok) {
+       if (response.ok) {
         document.location.replace('/');
+        console.log('enetered user && password')
       } else {
         alert('Failed to log in');
       }
-    }
+    
+  }
 };
   
   document
-    .querySelector('.login-form')
-    .addEventListener('submit', loginFormHandler);
+    .getElementById('enter')
+    .addEventListener('click', lFHandler);
   
 
