@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 class Accounts extends Model {
   checkPassword(password) {
     console.log(this.password)
-    console.log(password)
+    console.log(this.user_name)
     return bcrypt.compareSync(password, this.password);
     
   }
@@ -24,7 +24,6 @@ Accounts.init(
         allowNull: false,
       },
     user_name: {
-    user_name: {
         type: DataTypes.STRING,
         allowNull: false,
     },
@@ -37,7 +36,8 @@ Accounts.init(
         allowNull: false,
     },
   },
-  
+
+  {
     hooks: {
       beforeCreate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
@@ -48,8 +48,8 @@ Accounts.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
-  },
+    modelName: 'Accounts',
+  }
 );
 
 module.exports = Accounts;

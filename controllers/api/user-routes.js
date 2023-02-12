@@ -29,17 +29,19 @@ router.post('/login', async (req, res) => {
         user_name: req.body.username,
       },
     });
+  
+    
     
 
     if (!dbUserData) {
       res
         .status(400)
-        .json({ message: 'No Email Found' });
+        .json({ message: 'No User Found' });
       return;
     }
 
-    const validPassword = await dbUserData.checkPassword(req.body.password);
-   console.log(dbUserData.password)
+    //const validPassword = await dbUserData.checkPassword(req.body.password);
+   //console.log(dbUserData.password)
    
 
     if (req.body.password !== dbUserData.password) {
@@ -57,8 +59,9 @@ router.post('/login', async (req, res) => {
         .status(200)
         .json({ user: dbUserData, message: 'You are now logged in!' });
         console.log('logged in')
-        alert('You are now logged in')
+        //alert('You are now logged in')
         //res.redirect('/user')
+       
         
     });
   } catch (err) {
