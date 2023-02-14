@@ -28,11 +28,9 @@ router.get('/resident', async (req, res) => {
 
 
 router.get('/register', (req, res) => {
-    if(!res.session.loggedIn){
+    
     res.render('register')
-    }else{
-        res.redirect('/')
-    }
+    
 });
 
 
@@ -49,7 +47,7 @@ router.get('/homepage', (req, res) => {
 });
 
 router.get('/account', async (req, res) => {
-    console.log(res)
+   
    if(req.session.loggedIn){
     res.render('account');
    }else{
