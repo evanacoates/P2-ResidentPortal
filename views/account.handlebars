@@ -1,15 +1,41 @@
-<html>   
-<head> 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">  
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 
-<body>    
+<body>
 
-    <h1>Account Information</h1>
+<h1 class="center-align">Account Information</h1>
 
-    <h4> User name</h4>
-    <h4> Password </h4>
-    <h4> Billing Informartion </h4>
+    <form>
+        <h4> User name</h4>
+        <div class="input-field">
+            <input type="text" id="name">
+            <label class="active" for="name">Username</label>
+        </div>
+        <h4> Password </h4>
+        <div class="input-field">
+            <input type="text" id="password-input">
+            <label class="active" for="name">Password</label>
+        </div>
+        <h4> Billing Information </h4>
+        <div class="input-field">
+            <input type="text" id="billing-information">
+            <label class="active" for="name">Billing Information</label>
+        </div>
+        <center>
+            <button class="btn btn-large waves-effect waves-light z-depth-3 light-blue darken-3">Update Information
+                <i class="material-icons right">perm_identity</i>
+            </button>
+            <button type="button" class="btn btn-large waves-effect waves-light btn-flat z-depth-3"> Cancel</button>
+        </center>
+    </form>
+
 </body>
+
 </html>
