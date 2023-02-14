@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Residents } = require('../models');
+const { Residents, Accounts } = require('../models');
 const withAuth = require('../utils/auth');
 
 
@@ -7,64 +7,67 @@ const withAuth = require('../utils/auth');
 router.get('/', async (req, res) => {
     
    
-    console.log(req.session.loggedIn)
     
-     if (req.session.loggedIn) {
+    if (req.session.loggedIn) {
         res.redirect('/homepage');
-        return;
-      }
-       return res.render('login');
-    
        
-
+    }else{
+       res.render('login');
+    }
 })
 
 
 router.get('/resident', async (req, res) => {
    
-    res.render('resident', {
-        logged_in : req.session.logged_in});
-   
+    if(req.session.loggedIn){
+        res.render('resident');
+    }else{
+        res.redirect('/')
+    }
 });
 
 
 router.get('/register', (req, res) => {
-    
-    res.render('register', {
-    logged_in : req.session.logged_in});
-});
-
-router.get('/register', (req, res) => {
-    
+    if(!res.session.loggedIn){
     res.render('register')
-    //, {
-    //logged_in : req.session.logged_in});
+    }else{
+        res.redirect('/')
+    }
 });
+
+
 
 
 router.get('/homepage', (req, res) => {
-    console.log(req.session.loggedIn)
-    res.render('homepage', {
-    logged_in : req.session.logged_in});
+    
+    if(req.session.loggedIn){
+        res.render('homepage');
+    }else{
+        res.redirect('/')
+    }
     
 });
 
 router.get('/account', async (req, res) => {
-   
+    console.log(res)
+   if(req.session.loggedIn){
     res.render('account');
+   }else{
+    res.redirect('/')
+   }
+   
+
 });
 
 
-
-router.get('/account', async (req, res) => {
-   
-    res.render('account');
-});
 
 router.get('/lease', async (req, res) => {
    
-    res.render('lease', {
-        logged_in : req.session.logged_in});
+    if(req.session.loggedIn){
+        res.render('lease');
+    }else{
+        res.redirect('/')
+    }
 });
 
 module.exports = router; 

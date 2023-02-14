@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Accounts } = require('../../models');
+const { Accounts, Leases, Residents } = require('../../models');
 
 //CREATE new user
  router.post('/register', async (req, res) => {
@@ -32,7 +32,7 @@ router.post('/login', async (req, res) => {
         user_name: req.body.username,
       },
     });
-    console.log('here')
+   
   
     
     
@@ -53,20 +53,18 @@ router.post('/login', async (req, res) => {
         .status(400)
         .json({ message: 'Incorrect  password. Please try again!' });
         console.log('incorrect password');
-        const wrongPassword = document.createElement('p')
-        wrongPassword.textContent('invalid username or password');
-        document.getElementById('wrong-password').appendChild(wrongPassword)
-
+        
       return;
     }
 
     req.session.save(() => {
       req.session.loggedIn = true;
+      
 
       res
         .status(200)
         .json({ user: dbUserData, message: 'You are now logged in!' });
-        console.log('logged in')
+        
         //alert('You are now logged in')
         //res.redirect('/user')
        
@@ -88,5 +86,8 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+
+
+
 
 module.exports = router;
