@@ -1,26 +1,39 @@
-<html>   
-<head>  
-<meta name="viewport" content="width=device-width, initial-scale=1">  
-<title> Login Page </title>  
-<body>    
-    <center> <h1> Resident Login </h1> </center>   
-    <form>  
-        <div class="container">   
-            <label>Username : </label>   
-            <input type="text" id = "username-input" placeholder="Enter Username" name="username" required>  
-            <label>Password : </label>   
-            <input type="password" id = "password-input" placeholder="Enter Password" name="password" required>  
-            <button id = 'enter'>Login</button>   
-            <input type="checkbox" checked="checked"> Remember me   
-            <button type="button" class="cancelbtn"> Cancel</button>   
-             <br>
-            <a href ="/register">Create Account</a>
-        </div>   
-    </form>     
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title> Login Page </title>
+
+<body>
+
+    <h1 class="center-align"> Resident Login </h1>
+
+    <form>
+        <div class="input-field">
+            <input type="text" id="name">
+            <label class="active" for="name">Username</label>
+        </div>
+
+        <div class="input-field">
+            <input type="text" id="password-input">
+            <label class="active" for="name">Password</label>
+        </div>
+
+        <center>
+            <button class="btn btn-large waves-effect waves-light z-depth-3 light-blue darken-3">Login
+                <i class="material-icons right">send</i>
+            </button>
+            <button type="button" class="btn btn-large waves-effect waves-light btn-flat z-depth-3"> Cancel</button>
+        </center>
+
+    </form>
 
     <script src="./js/login.js"></script>
-    
+
 </body>
 
 
-</html>  
+</html>
