@@ -52,7 +52,11 @@ router.post('/login', async (req, res) => {
       res
         .status(400)
         .json({ message: 'Incorrect  password. Please try again!' });
-        console.log('incorrect password')
+        console.log('incorrect password');
+        const wrongPassword = document.createElement('p')
+        wrongPassword.textContent('invalid username or password');
+        document.getElementById('wrong-password').appendChild(wrongPassword)
+
       return;
     }
 
