@@ -15,6 +15,8 @@ const { Accounts, Leases, Residents } = require('../../models');
 
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.data = dbUserData;
+      
 
       res.status(200).json(dbUserData);
     });
@@ -32,11 +34,8 @@ router.post('/login', async (req, res) => {
         user_name: req.body.username,
       },
     });
-   
-    
-    
-    
 
+   
     if (!dbUserData) {
       res
         .status(400)
@@ -56,9 +55,15 @@ router.post('/login', async (req, res) => {
         
       return;
     }
-
+    
     req.session.save(() => {
+      
       req.session.loggedIn = true;
+      req.session.data = dbUserData;
+      
+
+      
+      console.log(req.session)
       
 
       res
@@ -69,11 +74,14 @@ router.post('/login', async (req, res) => {
         //res.redirect('/user')
        
         
+        
     });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
+
+  
 });
 
 // Logout

@@ -15,27 +15,27 @@
     <form>
         <h4> User name</h4>
         <div class="input-field">
-            <input type="text" id="name">
+            <input type="text" id="name" class = "input">
             <label class="active" for="name">{{user_name}}</label>
         </div>
         <h4> Password </h4>
         <div class="input-field">
-            <input type="password" id="password-input">
-            <label class="active" for="name">{{password}}</label>
+            <input type="password" id="password-input" class = "input">
+            <label class="active" for="name">*hidden*</label>
         </div>
         <h4> Billing Information </h4>
         <div class="input-field">
-            <input type="text" id="billing-information">
+            <input type="text" id="billing-information" class = "input">
             <label class="active" for="name">{{billing_in}}</label>
         </div>
         <center>
-            <button class="btn btn-large waves-effect waves-light z-depth-3 light-blue darken-3">Update Information
+            <button id = "update" class="btn btn-large waves-effect waves-light z-depth-3 light-blue darken-3">Update Information
                 <i class="material-icons right">perm_identity</i>
             </button>
             <a href = "/" type="button" class="btn btn-large waves-effect waves-light btn-flat z-depth-3"> Back To Homepage</a>
         </center>
     </form>
-
+ <script src="./js/update.js"></script>
 </body>
 
 </html>

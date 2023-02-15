@@ -1,6 +1,6 @@
-const { Accounts } = require("../../models");
+const { Accounts, Residents, Leases } = require("../../models");
 
-router.put('/Leases', async (req, res) => {
+router.put('/leases', async (req, res) => {
     try {
       const dbUserData = await Leases.update(req.body, {
         where: {
@@ -15,8 +15,9 @@ router.put('/Leases', async (req, res) => {
     } catch (err) {
       res.status(500).json(err);
     }
+})
 
-    router.put('/Residents', async (req, res) => {
+    router.put('/residents', async (req, res) => {
         try {
             const dbUserData = await Residents.update(req.body, {
                 where: {
@@ -31,9 +32,10 @@ router.put('/Leases', async (req, res) => {
             } catch (err) {
               res.status(500).json(err);
             }
+        })
     
 
-            router.put('/Residents', async (req, res) => {
+            router.put('/residents', async (req, res) => {
                 try {
                     const dbUserData = await Residents.update(req.body, {
                         where: {
@@ -48,8 +50,9 @@ router.put('/Leases', async (req, res) => {
                     } catch (err) {
                       res.status(500).json(err);
                     }
+                })
             
-            router.put('/Accounts', async (req, res) => {
+            router.put('/accounts', async (req, res) => {
                 try {
                     const dbUserData = await Accounts.update(req.body, {
                     where: {
@@ -64,3 +67,6 @@ router.put('/Leases', async (req, res) => {
                     } catch (err) {
                     res.status(500).json(err);
                         }
+                    });
+                    
+module.exports = router;
