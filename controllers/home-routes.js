@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Residents, Accounts } = require('../models');
+const { Residents, Accounts, Leases } = require('../models');
 
 const withAuth = require('../utils/auth');
 
@@ -22,7 +22,7 @@ router.get('/resident', async (req, res) => {
    
     if(req.session.loggedIn){    
         try {
-                const residentData = await Accounts.findByPk(req.session.data.id);
+                const residentData = await Residents.findByPk(req.session.data.id);
                 const resident = residentData.get({ plain: true })
                 res.render('resident', {...resident});
               } catch (err) {
@@ -78,7 +78,7 @@ router.get('/lease', async (req, res) => {
    
     if(req.session.loggedIn){    
         try {
-                const leaseData = await Accounts.findByPk(req.session.data.id);
+                const leaseData = await Leases.findByPk(req.session.data.id);
                 const lease = leaseData.get({ plain: true })
                 res.render('lease', {...lease});
               } catch (err) {
