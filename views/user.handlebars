@@ -1,19 +1,59 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <title>User Info</title>
 </head>
 
 <body>
+    <div id="office-image">
 
- <h1 class="center-align">Personal Information</h1>
+        <form class="row container" id="card-container">
 
-    <form>
-        <h4>Name</h4>
+            <div>
+                <div class="card-content padding-100px" id="card-2">
+
+                    <h1 class="center-align">User Information</h1>
+
+                    <h4>Name</h4>
+                    <div class="input-field">
+                        <input type="text" id="name">
+                        <label class="active" for="name">name</label>
+                    </div>
+                    <h4>Current Address</h4>
+                    <div class="input-field">
+                        <input type="text" id="address">
+                        <label class="active" for="name">password</label>
+                    </div>
+                    <h4>Phone Number</h4>
+                    <div class="input-field">
+                        <input type="text">
+                        <label class="active" for="name">phone number</label>
+                    </div>
+                    <h4>Email</h4>
+                    <div class="input-field">
+                        <input type="text" class="validate">
+                        <label class="active" for="name">email</label>
+                    </div>
+
+                    <center>
+                        <button class="btn btn-large waves-effect waves-light z-depth-3 light-blue darken-3">Update
+                            Information
+                            <i class="material-icons right">perm_identity</i>
+                        </button>
+                        <button type="button" class="btn btn-large waves-effect waves-light btn-flat z-depth-3">
+                            Cancel</button>
+                    </center>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <script src="./js/login.js"></script>
+
+
+    {{!-- <form> --}}
+        {{!-- <h4>Name</h4>
         <div class="input-field">
             <input type="text" id="name">
             <label class="active" for="name">name</label>
@@ -32,14 +72,14 @@
         <div class="input-field">
             <input type="text" class="validate">
             <label class="active" for="name">email</label>
-        </div>
-        <center>
+        </div> --}}
+        {{!-- {{!-- <center>
             <button class="btn btn-large waves-effect waves-light z-depth-3 light-blue darken-3">Update Information
                 <i class="material-icons right">perm_identity</i>
             </button>
             <button type="button" class="btn btn-large waves-effect waves-light btn-flat z-depth-3"> Cancel</button>
-        </center>
-    </form>
+        </center> --}}
+    </form> --}}
 
 </body>
 
