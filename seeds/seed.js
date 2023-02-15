@@ -12,9 +12,18 @@ const ResidentsSeedData = require('./residentsSeedData.json');
 const seedDatabase = async () => {
     await sequelize.sync({ force: true });
    
-    await Accounts.bulkCreate(AccountSeedData);
-    await Leases.bulkCreate(LeasesSeedData);
-    await Residents.bulkCreate(ResidentsSeedData);
+    await Accounts.bulkCreate(AccountSeedData, {
+        individualHooks: true,
+        returning: true,
+      });
+    await Leases.bulkCreate(LeasesSeedData,{
+        individualHooks: true,
+        returning: true,
+      });
+    await Residents.bulkCreate(ResidentsSeedData, {
+        individualHooks: true,
+        returning: true,
+      });
 
     process.exit(0);
 }
