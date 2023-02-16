@@ -1,45 +1,54 @@
-<html>   
-<head> 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">  
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<html>
+
+<head>
+    <title>Lease Info</title>
 </head>
-<body>    
-    
-    <h1 class="center-align">Leasing Information</h1>
 
-    <form>
-        <h4> Lease Holder</h4>
-        <div class="input-field">
-            <input disabled type="text" id="name">
-            <label class="active" for="name">{{lease_holder}}</label>
-        </div>
-        <h4>Unit Number</h4>
-        <div class="input-field">
-            <input disabled type="text" id="password-input">
-            <label class="active" for="name">{{unit_number}}</label>
-        </div>
-        <h4>Leasing Term</h4>
-        <div class="input-field">
-            <input disabled type="text" id="name">
-            <label class="active" for="name">{{leasing_term}}</label>
-        </div>
-        <h4>Cost of Rent</h4>
-        <div class="input-field">
-            <input disabled type="text" id="disabled">
-            <label class="active" for="name">{{rent_cost}}</label>
-        </div>
+<body>
 
-        <center>
-            <button class="btn btn-large waves-effect waves-light z-depth-3 light-blue darken-3">View Contract
-                <i class="material-icons right">picture_as_pdf</i>
-            </button>
-            <a href = "/" type="button" class="btn btn-large waves-effect waves-light btn-flat z-depth-3"> Back To Homepage</a>
-        </center>
+    <div class="background-images" id="livingroom-image">
+        <div class="card-content padding-100px" id="card-2">
 
-    </form>
+            <h1 class="center-align">Leasing Information</h1>
+
+            <form class="row container" id="card-container">
+
+                <h5>Lease Holder</h5>
+                <div class="input-field">
+                    <input disabled type="text" id="name">
+                    <label class="active" for="name">{{lease_holder}}</label>
+                </div>
+
+                <h5>Unit Number</h5>
+                <div class="input-field">
+                    <input disabled type="text" id="password-input">
+                    <label class="active" for="unit">{{unit_number}}</label>
+                </div>
+
+                <h5>Leasing Term</h5>
+                <div class="input-field">
+                    <input disabled type="text" id="name">
+                    <label class="active" for="lease">{{leasing_term}}</label>
+                </div>
+
+                <h5>Cost of Rent</h5>
+                <div class="input-field">
+                    <input disabled type="text" id="disabled">
+                    <label class="active" for="rent">{{rent_cost}}</label>
+                </div>
+
+                <center>
+                    <button class="btn btn-large waves-effect waves-light z-depth-3 light-blue darken-3">View Contract
+                        <i class="material-icons right">picture_as_pdf</i>
+                    </button>
+                    <a href="/" type="button" class="btn btn-large waves-effect waves-light btn-flat z-depth-3"> Back To
+                        Homepage</a>
+                </center>
+
+            </form>
+        </div>
+    </div>
 
 </body>
+
 </html>
