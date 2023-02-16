@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Accounts } = require('../../models');
+const { Accounts, Leases, Residents } = require('../../models');
 
 //CREATE new user
  router.post('/register', async (req, res) => {
@@ -15,6 +15,8 @@ const { Accounts } = require('../../models');
 
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.data = dbUserData;
+      
 
       res.status(200).json(dbUserData);
     });
@@ -32,11 +34,8 @@ router.post('/login', async (req, res) => {
         user_name: req.body.username,
       },
     });
-    console.log('here')
-  
-    
-    
 
+   
     if (!dbUserData) {
       res
         .status(400)
@@ -45,33 +44,44 @@ router.post('/login', async (req, res) => {
     }
 
     const validPassword = await dbUserData.checkPassword(req.body.password);
-   //console.log(dbUserData.password)
+   
    
 
     if (!validPassword) {
       res
         .status(400)
         .json({ message: 'Incorrect  password. Please try again!' });
-        console.log('incorrect password')
+        console.log('incorrect password');
+        
       return;
     }
-
+    
     req.session.save(() => {
+      
       req.session.loggedIn = true;
+      req.session.data = dbUserData;
+      
+
+      
+      console.log(req.session)
+      
 
       res
         .status(200)
         .json({ user: dbUserData, message: 'You are now logged in!' });
-        console.log('logged in')
+        
         //alert('You are now logged in')
         //res.redirect('/user')
        
+        
         
     });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
+
+  
 });
 
 // Logout
@@ -84,5 +94,8 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
   }
 });
+
+
+
 
 module.exports = router;

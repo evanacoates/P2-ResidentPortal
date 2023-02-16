@@ -10,6 +10,10 @@ Leases.init(
       allowNull: false,
       primaryKey: true,
     },
+    unit_number: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
     lease_holder: {
       type: DataTypes.STRING,
       allowNull: false,

@@ -3,30 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 
 <body>
 
-<h1 class="center-align">Account Information</h1>
+ <h1 class="center-align">Personal Information</h1>
 
     <form>
-        <h4> User name</h4>
+        <h4>Name</h4>
         <div class="input-field">
-            <input type="text" id="name" class = "input">
-            <label class="active" for="name">{{user_name}}</label>
+            <input type="text" id="name">
+            <label class="active" for="name">{{name}}</label>
         </div>
-        <h4> Password </h4>
+        <h4>Current Address</h4>
         <div class="input-field">
-            <input type="password" id="password-input" class = "input">
-            <label class="active" for="name">*hidden*</label>
+            <input type="text" id="address">
+            <label class="active" for="name">{{address}}</label>
         </div>
-        <h4> Billing Information </h4>
+        <h4>Phone Number</h4>
         <div class="input-field">
-            <input type="text" id="billing-information" class = "input">
-            <label class="active" for="name">{{billing_in}}</label>
+            <input type="text">
+            <label class="active" for="name">{{phone_number}}</label>
+        </div>
+        <h4>Email</h4>
+        <div class="input-field">
+            <input type="text" class="validate">
+            <label class="active" for="name">{{email}}</label>
         </div>
         <center>
             <button id = "update" class="btn btn-large waves-effect waves-light z-depth-3 light-blue darken-3">Update Information
@@ -35,7 +40,7 @@
             <a href = "/" type="button" class="btn btn-large waves-effect waves-light btn-flat z-depth-3"> Back To Homepage</a>
         </center>
     </form>
- <script src="./js/update.js"></script>
+
 </body>
 
 </html>
