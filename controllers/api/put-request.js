@@ -35,14 +35,16 @@ router.put('/leases', async (req, res) => {
             }
         })
     
-          const dynamicBody = {}
+       
             
             router.put('/account', async (req, res) => {
                 try {
                   console.log(req.body)
                     const dbUserData = await Accounts.update(req.body, {
                     where: {
-                      id: req.params,
+                      user_name: req.body.username,
+                      password: req.body.password,
+                      billing_in: req.body.billing_in,
                     },
                     });
                     if (!dbuserData[0]) {
