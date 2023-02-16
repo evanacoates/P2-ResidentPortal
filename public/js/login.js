@@ -1,7 +1,7 @@
 console.log('using login.js')
 
 async function lFHandler(event) {
-    console.log('before prevent default')
+    
     event.preventDefault();
     
   
@@ -19,7 +19,7 @@ async function lFHandler(event) {
   
        if (response.ok) {
         document.location.replace('/');
-        console.log('enetered user && password')
+        
       } else {
         alert('Failed to log in');
       }
@@ -27,7 +27,7 @@ async function lFHandler(event) {
   }
 };
   
-  document
+document
     .getElementById('enter')
     .addEventListener('click', lFHandler);
   

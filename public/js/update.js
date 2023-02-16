@@ -1,4 +1,4 @@
-console.log('using update.js')
+
 
 async function lFHandler(event) {
     
@@ -10,25 +10,29 @@ async function lFHandler(event) {
 
   
      const input = document.querySelector('.input').value.trim()
-     console.log(input);
     
+    const windowLocation = window.location.pathname;
+
+    const dynamicBody = {}
   
 
-    console.log(input)
+    
     if(input){
       
-      const response = await fetch('/api/put-request/', {
-        method: 'put',
-        body: JSON.stringify({ input }),
+      const response = await fetch('/api/put-request'+ windowLocation, {
+        method: 'PUT',
+        body: JSON.stringify({  }),
         headers: { 'Content-Type': 'application/json' },
       });
 
-      console.log(input)
+     
+    
   
        if (response.ok) {
         document.location.replace('/');
       } else {
         alert('Failed to update');
+        
       }
     
   } 
