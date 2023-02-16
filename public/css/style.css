@@ -1,0 +1,29 @@
+#card-1 {
+    padding: 80px;
+    background-color: #DEEEFF;
+    margin: 100px;
+}
+
+#card-2 {
+    padding: 80px;
+    margin: 100px;
+    background-color: #DEEEFF;
+}
+
+#building-image {
+    background-image: url('../images/building.jpg');
+    background-size: cover;
+    height: 100%;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+#office-image {
+    background-image: url('../images/office.jpg');
+    background-size: cover;
+    height: 100%;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
