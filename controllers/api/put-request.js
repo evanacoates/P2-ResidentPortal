@@ -1,3 +1,4 @@
+const router = require('express').Router
 const { Accounts, Residents, Leases } = require("../../models");
 
 router.put('/leases', async (req, res) => {
@@ -24,10 +25,10 @@ router.put('/leases', async (req, res) => {
                   id: req.params.id,
                 },
               });
-              if (!dbuserData[0]) {
-                res.status(404).json({ message: 'There are no residents with this user information.' });
-                return;
-              }
+              // if (!dbuserData[0]) {
+              //   res.status(404).json({ message: 'There are no residents with this user information.' });
+              //   return;
+              // }
               res.status(200).json(dbUserData);
             } catch (err) {
               res.status(500).json(err);
@@ -35,22 +36,21 @@ router.put('/leases', async (req, res) => {
         })
     
 
-            router.put('/residents', async (req, res) => {
-                try {
-                    const dbUserData = await Residents.update(req.body, {
-                        where: {
-                          id: req.params.id,
-                        },
-                      });
-                      if (!dbuserData[0]) {
-                        res.status(404).json({ message: 'There are no residents with this user information.' });
-                        return;
-                      }
-                      res.status(200).json(dbUserData);
-                    } catch (err) {
-                      res.status(500).json(err);
-                    }
-                })
+            // router.put('/residents', async (req, res) => {
+            //     try {
+            //         const dbUserData = await Residents.update(req.body, {
+            //             where: {
+              //             },
+            //           });
+            //           if (!dbuserData[0]) {
+            //             res.status(404).json({ message: 'There are no residents with this user information.' });
+            //             return;
+            //           }
+            //           res.status(200).json(dbUserData);
+            //         } catch (err) {
+            //           res.status(500).json(err);
+            //         }
+            //     })
             
             router.put('/accounts', async (req, res) => {
                 try {
