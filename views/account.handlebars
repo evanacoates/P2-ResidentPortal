@@ -18,6 +18,10 @@
                     <input type="text" id="name" class="input">
                     <label class="active" for="name">{{user_name}}</label>
                 </div>
+                 <h5>Unit Number</h5>
+                <div class="input-field">
+                    <input type="text" id="unit-number">
+                    <label class="active" for="rent">{{unit_number}}</label>
                 <h5> Password </h5>
                 <div class="input-field">
                     <input type="password" id="password-input" class="input">
@@ -29,10 +33,12 @@
                     <label class="active" for="name">{{billing_in}}</label>
                 </div>
                 <center>
-                    <button id="update"
-                        class="btn btn-large waves-effect waves-light z-depth-3 light-blue darken-3">Update Information
-                        <i class="material-icons right">perm_identity</i>
-                    </button>
+                    <div 
+                        class="btn btn-large waves-effect waves-light z-depth-3 light-blue darken-3" 
+                        onclick="updateButtonHandler(event, 'account', {'user_name': 'name', 'unit_number': 'unit-number', 'password': 'password-input', 'billing_in': 'billing-information'})">
+                        Update Information
+                    <i class="material-icons right">perm_identity</i>
+                    </div>
                     <a href="/" type="button" class="btn btn-large waves-effect waves-light btn-flat z-depth-3"> Back To
                         Homepage</a>
                 </center>

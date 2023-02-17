@@ -15,9 +15,9 @@ Accounts.init(
   {
   
     id: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-        primaryKey: true,
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
     },
     unit_number: {
       type: DataTypes.INTEGER,
@@ -36,7 +36,7 @@ Accounts.init(
         allowNull: false,
     },
     billing_in: {
-        type: DataTypes.DECIMAL,
+        type: DataTypes.STRING,
         allowNull: true,
     },
   },
@@ -44,6 +44,10 @@ Accounts.init(
   {
     hooks: {
       beforeCreate: async (newUserData) => {
+        newUserData.password = await bcrypt.hash(newUserData.password, 10);
+        return newUserData;
+      },
+      beforeUpdate: async (newUserData) => {
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
