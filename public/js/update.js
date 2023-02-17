@@ -26,11 +26,8 @@ async function updateButtonHandler(event, route, fields) {
  
  
 
-   if (response.ok) {
-    alert('information updated!')
-  } else {
+   if (!response.ok) {
     alert('Failed to update');
-    
   }
 }
 }
