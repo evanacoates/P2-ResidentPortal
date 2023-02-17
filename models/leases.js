@@ -9,22 +9,26 @@ Leases.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
+      references: {
+        model: 'accounts',
+        key: 'id',
+      },
     },
     unit_number: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
     },
     lease_holder: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     leasing_term: {
-      type: DataTypes.DATE,
-      allowNull: false,
+      type: DataTypes.STRING,
+      allowNull: true,
     },
     rent_cost: {
         type: DataTypes.DECIMAL,
-        allowNull: false,
+        allowNull: true,
     },
   },
   {

@@ -10,7 +10,10 @@ Residents.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      //autoIncrement: true,
+      references: {
+        model: 'accounts',
+        key: 'id',
+      },
     },
     name: {
       type: DataTypes.STRING,

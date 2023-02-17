@@ -25,25 +25,28 @@
                 </div>
                 <h5>Phone Number</h5>
                 <div class="input-field">
-                    <input type="text">
+                    <input type="text" id = "phone">
                     <label class="active" for="phone">{{phone_number}}</label>
                 </div>
                 <h5>Email</h5>
                 <div class="input-field">
-                    <input type="text" class="validate">
+                    <input type="text" class="validate" id = "email">
                     <label class="active" for="email">{{email}}</label>
                 </div>
                 <center>
-                    <button id="update"
-                        class="btn btn-large waves-effect waves-light z-depth-3 light-blue darken-3">Update Information
-                        <i class="material-icons right">account_box</i>
-                    </button>
+                    <div 
+                        class="btn btn-large waves-effect waves-light z-depth-3 light-blue darken-3" 
+                        onclick="updateButtonHandler(event, 'resident', {'name': 'name', 'address': 'address', 'phone_number': 'phone', 'email': 'email'})">
+                        Update Information
+                    <i class="material-icons right">perm_identity</i>
+                    </div>
                     <a href="/" type="button" class="btn btn-large waves-effect waves-light btn-flat z-depth-3"> Back To
                         Homepage</a>
                 </center>
             </form>
         </div>
     </div>
+    <script src="./js/update.js"></script>
 </body>
 
 </html>

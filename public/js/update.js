@@ -1,42 +1,46 @@
-console.log('using update.js')
 
-async function lFHandler(event) {
-    
-    event.preventDefault();
-    
-    
-    
-    //const input = document.querySelector('.input-field').value.trim()
 
-  
-     const input = document.querySelector('.input').value.trim()
-     console.log(input);
-    
-  
+async function updateButtonHandler(event, route, fields) {
+  event.preventDefault();
 
-    console.log(input)
-    if(input){
-      
-      const response = await fetch('/api/put-request/', {
-        method: 'put',
-        body: JSON.stringify({ input }),
-        headers: { 'Content-Type': 'application/json' },
-      });
-
-      console.log(input)
-  
-       if (response.ok) {
-        document.location.replace('/');
-      } else {
-        alert('Failed to update');
-      }
+  let requestBody = {};
+  for (let jsonKey of Object.keys(fields)) {
+    let elementId = fields[jsonKey];
+    console.log(`lookign for #${elementId} to build body (key=${jsonKey})...`);
     
-  } 
+    let valueUserTyped = document.getElementById(elementId).value.trim();
+    // only send the value if the user actually typed something
+     if (valueUserTyped !== "") {
+       requestBody[jsonKey] = valueUserTyped;
+     } 
+     
+     
+ 
+
+  const response = await fetch(`/api/put-request/${route}`, {
+    method: 'PUT',
+    body: JSON.stringify(requestBody),
+    headers: { 'Content-Type': 'application/json' },
+  });
+
+ 
+ 
+
+   if (response.ok) {
+    alert('information updated!')
+  } else {
+    alert('Failed to update');
+    
+  }
+}
 }
 
-  
-  document
-    .getElementById('update')
-    .addEventListener('click', lFHandler);
-  
+
+/* document
+  .getElementById('update')
+  .addEventListener('click', lFHandler */
+
+
+
+
 
