@@ -28,7 +28,7 @@ async function updateButtonHandler(event, route, fields) {
 
    if (!response.ok) {
   
-    alert('Failed to update');
+    console.log('Failed to update');
     
   }
 }
