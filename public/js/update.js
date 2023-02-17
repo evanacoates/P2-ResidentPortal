@@ -1,46 +1,40 @@
 
 
-async function lFHandler(event) {
-    
+async function updateButtonHandler(event, route, fields) {
     event.preventDefault();
-    
-    
-    
-    //const input = document.querySelector('.input-field').value.trim()
-
-  
-     const input = document.querySelector('.input').value.trim()
-    
-    const windowLocation = window.location.pathname;
-
-    const dynamicBody = {}
-  
-
-    
-    if(input){
+    let requestBody = {};
+    for (let jsonKey of Object.keys(fields)) {
+      let elementId = fields[jsonKey];
+      console.log(`lookign for #${elementId} to build body (key=${jsonKey})...`);
       
-      const response = await fetch('/api/put-request'+ windowLocation, {
-        method: 'PUT',
-        body: JSON.stringify({  }),
-        headers: { 'Content-Type': 'application/json' },
-      });
+      let valueUserTyped = document.getElementById(elementId).value.trim();
+      // only send the value if the user actually typed something
+       if (valueUserTyped !== "") {
+         requestBody[jsonKey] = valueUserTyped;
+      } 
+      requestBody[jsonKey] = valueUserTyped;
+    }
 
-     
-    
-  
-       if (response.ok) {
-        document.location.replace('/');
-      } else {
-        alert('Failed to update');
-        
-      }
-    
-  } 
+    const response = await fetch(`/api/put-request/${route}`, {
+      method: 'PUT',
+      body: JSON.stringify(requestBody),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+   
+   
+
+     if (response.ok) {
+      document.location.replace('/');
+    } else {
+      alert('Failed to update');
+      
+    }
 }
 
   
-  document
+  /* document
     .getElementById('update')
-    .addEventListener('click', lFHandler);
+    .addEventListener('click', lFHandler */
   
 
