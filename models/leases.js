@@ -27,7 +27,7 @@ Leases.init(
       allowNull: true,
     },
     rent_cost: {
-        type: DataTypes.DECIMAL,
+        type: DataTypes.INTEGER,
         allowNull: true,
     },
   },
